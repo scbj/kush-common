@@ -7,7 +7,9 @@
   "license": "MIT",
   "private": true,
   "bit": {
-    "env": {},
+    "env": {
+      "compiler": "bit.envs/compilers/babel@7.0.4"
+    },
     "componentsDefaultDirectory": "components/{name}",
     "packageManager": "npm"
   }
