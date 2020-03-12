@@ -1,0 +1,14 @@
+{
+  "name": "kush-common",
+  "version": "0.0.1",
+  "description": "Shared code between Kush projects",
+  "main": "src/index.js",
+  "author": "Sacha B.",
+  "license": "MIT",
+  "private": true,
+  "bit": {
+    "env": {},
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
+  }
+}
