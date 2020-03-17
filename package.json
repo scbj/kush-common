@@ -2,15 +2,20 @@
   "name": "kush-common",
   "version": "0.0.1",
   "description": "Shared code between Kush projects",
-  "main": "src/index.js",
   "author": "Sacha B.",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "yaml": "yaml2json --save --pretty --recursive src/"
+  },
   "bit": {
     "env": {
       "compiler": "bit.envs/compilers/babel@7.0.4"
     },
-    "componentsDefaultDirectory": "components/{name}",
-    "packageManager": "npm"
+    "componentsDefaultDirectory": "src/{name}",
+    "packageManager": "yarn"
+  },
+  "devDependencies": {
+    "yamljs": "^0.3.0"
   }
 }
