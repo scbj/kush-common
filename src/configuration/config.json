@@ -21,6 +21,22 @@
         "target": "button.playing"
       }
     },
+    "shuffling": {
+      "method": "exists",
+      "props": {
+        "target": "button.shuffleControl.m-shuffling"
+      }
+    },
+    "repeating": {
+      "method": "stateExists",
+      "props": {
+        "defaultState": "none",
+        "targets": {
+          "one": "button.repeatControl.m-one",
+          "all": "button.repeatControl.m-all"
+        }
+      }
+    },
     "title": {
       "method": "attribute",
       "props": {
@@ -49,6 +65,22 @@
       "interval": 400,
       "payload": [
         "playing"
+      ]
+    },
+    {
+      "value": "repeating",
+      "emit": "playback:statusChanged",
+      "interval": 2000,
+      "payload": [
+        "repeating"
+      ]
+    },
+    {
+      "value": "shuffling",
+      "emit": "playback:statusChanged",
+      "interval": 3000,
+      "payload": [
+        "shuffling"
       ]
     },
     {
