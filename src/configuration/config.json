@@ -7,9 +7,18 @@
         "target": "a.playbackSoundBadge__lightLink.sc-link-light"
       }
     },
+    "duration": {
+      "method": "attribute",
+      "props": {
+        "attributeName": "aria-valuemax",
+        "target": "div.playbackTimeline__progressWrapper"
+      }
+    },
     "playing": {
       "method": "exists",
-      "props": null
+      "props": {
+        "target": "button.playing"
+      }
     },
     "title": {
       "method": "attribute",
