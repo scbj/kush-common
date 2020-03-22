@@ -10,6 +10,7 @@ getters:
     props:
       attributeName: aria-valuemax
       target: 'div.playbackTimeline__progressWrapper'
+      type: Number
 
   playing:
     method: exists

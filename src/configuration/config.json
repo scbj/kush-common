@@ -11,7 +11,8 @@
       "method": "attribute",
       "props": {
         "attributeName": "aria-valuemax",
-        "target": "div.playbackTimeline__progressWrapper"
+        "target": "div.playbackTimeline__progressWrapper",
+        "type": "Number"
       }
     },
     "playing": {
