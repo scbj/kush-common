@@ -1,17 +1,15 @@
 {
   "getters": {
-    "url": {
+    "channel": {
       "method": "attribute",
       "props": {
-        "attributeName": "href",
-        "target": "a.playbackSoundBadge__titleLink"
+        "attributeName": "title",
+        "target": "a.playbackSoundBadge__lightLink.sc-link-light"
       }
     },
     "playing": {
       "method": "exists",
-      "props": {
-        "target": "button.playing"
-      }
+      "props": null
     },
     "title": {
       "method": "attribute",
@@ -20,32 +18,21 @@
         "target": "a.playbackSoundBadge__titleLink"
       }
     },
-    "channel": {
-      "method": "attribute",
-      "props": {
-        "attributeName": "title",
-        "target": "a.playbackSoundBadge__lightLink.sc-link-light"
-      }
-    },
     "thumbnail": {
       "method": "backgroundImage",
       "props": {
         "target": ".playControls__soundBadge span.sc-artwork.image__full"
       }
+    },
+    "url": {
+      "method": "attribute",
+      "props": {
+        "attributeName": "href",
+        "target": "a.playbackSoundBadge__titleLink"
+      }
     }
   },
   "watchers": [
-    {
-      "value": "url",
-      "emit": "playback:trackChanged",
-      "payload": [
-        "channel",
-        "title",
-        "thumbnail",
-        "url"
-      ],
-      "interval": 200
-    },
     {
       "value": "playing",
       "emit": "playback:statusChanged",
@@ -53,6 +40,18 @@
       "payload": [
         "playing"
       ]
+    },
+    {
+      "value": "url",
+      "emit": "playback:trackChanged",
+      "payload": [
+        "channel",
+        "duration",
+        "title",
+        "thumbnail",
+        "url"
+      ],
+      "interval": 200
     }
   ],
   "commands": [
@@ -64,6 +63,14 @@
           "props": {
             "target": ".skipControl.sc-ir.playControls__control.playControls__next.skipControl__next"
           }
+        }
+      ]
+    },
+    {
+      "trigger": "playback:play",
+      "actions": [
+        {
+          "name": "navigate"
         }
       ]
     },
@@ -86,14 +93,6 @@
           "props": {
             "target": ".playControl.sc-ir.playControls__control.playControls__play"
           }
-        }
-      ]
-    },
-    {
-      "trigger": "playback:play",
-      "actions": [
-        {
-          "name": "navigate"
         }
       ]
     }
